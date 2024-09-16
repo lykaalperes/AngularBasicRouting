@@ -1,27 +1,70 @@
-# MyAngular
+## First created a repository named "AngularBasicRouting"
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.4.
+## Then created a folder for the components inside the folder “app”, after that I created 4 components which are; login, signup, homepage, and landing page.
 
-## Development server
+## Next is I create a app.module.ts to set-up, import, configure, and define my route.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router';
 
-## Code scaffolding
+import { AppComponent } from './app.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
+import { LadingPageComponent } from './components/lading-page/lading-page.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+const routes: Routes = [
+  { path: 'homepage', component: HomepageComponent },
+  { path: 'lading-page', component: LadingPageComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: '', redirectTo: '/homepage', pathMatch: 'full' }, 
+  { path: '**', redirectTo: '/homepage' }
+];
 
-## Build
+@NgModule({
+  declarations: [
+    AppComponent,
+    HomepageComponent,
+    LadingPageComponent,
+    LoginComponent,
+    SignupComponent
+  ],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(routes)
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Then I removed the standalone: true and imports: [] in all the components typescripts to make them all connected.
 
-## Running unit tests
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
+})
+export class AppComponent {
+  title = 'my-angular';
+}
 
-## Running end-to-end tests
+## Next, I added <router-outlet></router-outlet> to app.component.html so the routed components will be displayed.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+<nav>
+  <a routerLink="/login">Log In</a><br>
+  <a routerLink="/signup">Sign Up</a><br>
+  <a routerLink="/homepage">Homepage</a><br>
+  <a routerLink="/lading-page">Landing Page</a><br>
+<br>
+</nav>
+<router-outlet></router-outlet>
 
-## Further help
+## Then I run, tested, and debugged.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Lastly, pushed all the files in github.
