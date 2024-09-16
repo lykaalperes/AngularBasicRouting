@@ -9,7 +9,7 @@
 
 ## Then I removed the standalone: true and imports: [] in all the components typescripts to make them all connected.
 ![image](https://github.com/user-attachments/assets/751ba10b-f8d8-4f81-8bd5-c01bddb29c2f)
-![image](https://github.com/user-attachments/assets/f27bf3a5-8f20-4314-949f-65ac736eed03)
+![image](https://github.com/user-attachments/assets/5bd7edaa-6067-4d50-ac41-46bfcd196435)
 ![image](https://github.com/user-attachments/assets/a53ef2ec-3ec0-4d9b-9d54-50a2e3d232f5)
 ![image](https://github.com/user-attachments/assets/a8a56155-f708-4e7a-9505-b0d2d18486a2)
 ![image](https://github.com/user-attachments/assets/5dfb916b-4a9e-479a-8d5d-27cd27106196)
